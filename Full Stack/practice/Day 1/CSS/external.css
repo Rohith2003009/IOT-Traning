@@ -1,0 +1,12 @@
+ body {
+        background-color: lab(90.98% -39.47 59.42);
+    }
+    h1 {
+         color: oklch(45.601% 0.27339 268.097);
+         text-align: center;
+    }
+    p {
+        font-size: 20px;
+        font-family: fantasy;
+        color: #d6011a;
+    }
