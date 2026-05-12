@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <button id="btn"> click me</button>
+    <script>
+        /1st event/
+     let btn = document.getElementById("btn");
+     btn.onclick = function() {
+        alert("Hello rohith!!")
+     }
+
+     //2nd event/
+     btn.onmouseover = function() {
+        btn.style.backgroundColor = "red";
+     }
+
+     btn.onmouseleave = function() {
+        btn.style.backgroundColor = "white";
+     }
+    </script>
+</body>
+</html>
