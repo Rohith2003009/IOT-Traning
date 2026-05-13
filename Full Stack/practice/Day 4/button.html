@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Button</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            overflow: hidden; /* Prevents scrollbars */
+        }
+
+        #elusiveButton {
+            position: absolute; /* Crucial for movement */
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.1s ease; /* Smooth motion */
+        }
+    </style>
+</head>
+<body>
+
+    <button id="elusiveButton">Click Me!</button>
+
+    <script>
+        const button = document.getElementById('elusiveButton');
+
+        // Function to move the button
+        function moveButton() {
+            // Calculate max positions based on window size minus button size
+            const maxWidth = window.innerWidth - button.offsetWidth;
+            const maxHeight = window.innerHeight - button.offsetHeight;
+
+            // Generate random top and left positions
+            const newTop = Math.floor(Math.random() * maxHeight);
+            const newLeft = Math.floor(Math.random() * maxWidth);
+
+            // Apply new position
+            button.style.top = newTop + 'px';
+            button.style.left = newLeft + 'px';
+        }
+
+        // Trigger on mouseover (hard to click)
+        button.addEventListener('mouseover', moveButton);
+        alert("ni boy adre button click madoo ga, nin kai li agalla bidu!");
+
+        // Optional: Also move on click just in case
+        button.addEventListener('click', () => {
+            alert("Wow, you're fast!");
+        });
+    </script>
+</body>
+</html>

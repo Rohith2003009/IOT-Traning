@@ -43,11 +43,19 @@
         let name = document.getElementById("name").value;
         let email = document.getElementById("email").value;
         let password = document.getElementById("password").value;
+        let pattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
      
            if(name == ""  || email == "" || password == ""){
             alert("Please fill all the fields");
             return false;
+
            }
+           
+           if(!pattern.test(password)){
+            alert("Password must be at least 8 characters long and contain at least one letter, one number, and one special character");
+            return false;
+           }
+            
            alert("Form submitted successfully");
            return true;
         }
